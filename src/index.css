@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+section {
+    margin-top: 100px;
+}
+
+table th {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+table td {
+    font-size: 18px;
+    text-align: center;
+}
+
+.Btn {
+    padding: 8px 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+nav ul li .active {
+    color: green;
+}
