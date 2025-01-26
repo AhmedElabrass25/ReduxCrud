@@ -11,13 +11,16 @@ const Home = () => {
   useEffect(() => {
     dispatch(getAllPosts());
   }, [dispatch]);
-  let deletePost=useCallback((id)=>dispatch(deletePostFunc(id)),[dispatch])
+  let deletePost = useCallback(
+    (id) => dispatch(deletePostFunc(id)),
+    [dispatch]
+  );
   return (
     <>
       {loading && <Loading />}
       {error && <p>{error}</p>}
       <section className="">
-        <div className="container">
+        <div className="container overflow-x-scroll sm:overflow-hidden">
           <table className="w-full text-sm text-gray-500 text-center">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -35,7 +38,14 @@ const Home = () => {
             <tbody>
               {/* Display Posts */}
               {posts.map((post, index) => {
-                return <PostRow post={post} index={index} key={post.id} deletePost={deletePost} />;
+                return (
+                  <PostRow
+                    post={post}
+                    index={index}
+                    key={post.id}
+                    deletePost={deletePost}
+                  />
+                );
               })}
             </tbody>
           </table>
